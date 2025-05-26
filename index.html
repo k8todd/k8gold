@@ -7,22 +7,75 @@
     <title>K8が完全進化！全リニューアルで楽しさMAX解禁！</title>
     
     <style type="text/css">
-        /* Only keep necessary media queries / 必要なメディアクエリのみ保持 / 只保留必要的媒体查询 */
-        @media screen and (max-width: 600px) {
-            .mobile-center { text-align: center !important; }
-            .mobile-padding { padding: 10px !important; }
-            .mobile-font { font-size: 14px !important; }
-            .mobile-title { font-size: 18px !important; }
-            .mobile-button { padding: 10px 20px !important; font-size: 14px !important; }
-            .mobile-hide { display: none !important; }
-            .mobile-full { width: 100% !important; }
+        /* Reset styles */
+        body, table, td, p, a, h1, h2, h3 {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            font-family: Arial, sans-serif;
         }
         
-        /* Outlook conditional comment styles / Outlook用条件付きコメントのスタイル / Outlook条件注释样式 */
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+        
+        /* Mobile responsive styles */
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+            .mobile-center { 
+                text-align: center !important; 
+            }
+            .mobile-padding { 
+                padding: 10px !important; 
+            }
+            .mobile-font { 
+                font-size: 14px !important; 
+            }
+            .mobile-title { 
+                font-size: 18px !important; 
+            }
+            .mobile-button { 
+                padding: 10px 20px !important; 
+                font-size: 14px !important; 
+            }
+            .mobile-hide { 
+                display: none !important; 
+            }
+            .mobile-full { 
+                width: 100% !important; 
+            }
+            /* Games section - keep 3 games per row on mobile */
+            .game-image {
+                width: 100% !important;
+                max-width: 120px !important;
+            }
+            .game-cell {
+                width: 33.33% !important;
+                padding: 5px !important;
+            }
+        }
+        
+        /* Outlook specific styles */
         <!--[if mso]>
         <style type="text/css">
             table { border-collapse: collapse; }
             .button { padding: 12px 30px; }
+            .outlook-button {
+                mso-hide: all;
+            }
         </style>
         <![endif]-->
     </style>
@@ -30,33 +83,33 @@
 
 <body style="margin: 0; padding: 0; background-color: #263143; font-family: Arial, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
     
-    <!-- Main Container Table / メインコンテナテーブル / 主容器表格 -->
+    <!-- Main Container Table -->
     <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0; padding: 0; background-color: #263143;">
         <tr>
             <td align="center" style="padding: 0;">
                 
-                <!-- Content Table / コンテンツテーブル / 内容表格 -->
-                <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 100%; background-color: #263143;">
+                <!-- Content Table -->
+                <table cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width: 600px; width: 100%; background-color: #263143;">
                     
-                    <!-- Logo Section / ロゴ部分 / Logo部分 -->
+                    <!-- Logo Section -->
                     <tr>
                         <td align="center" style="padding: 20px; background-color: #263143;">
                             <img src="https://i.imgur.com/2Zht8e6.png" alt="K8 Logo" width="250" style="max-width: 250px; height: auto; display: block;">
                         </td>
                     </tr>
                     
-                    <!-- Banner Image / バナー画像 / Banner图片 -->
+                    <!-- Banner Image -->
                     <tr>
                         <td align="center" style="padding: 0;">
                             <img src="https://i.imgur.com/Vx9eDvO.jpeg" alt="K8 Banner" width="600" style="width: 100%; max-width: 600px; height: auto; display: block; border-radius: 12px 12px 0 0;">
                         </td>
                     </tr>
                     
-                    <!-- Main Content Area / メインコンテンツエリア / 主要内容区域 -->
+                    <!-- Main Content Area -->
                     <tr>
                         <td style="background-color: #1E2735; padding: 20px; border-radius: 0 0 12px 12px;">
                             
-                            <!-- Welcome Text / 歓迎テキスト / 欢迎文字 -->
+                            <!-- Welcome Text -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 10px 0;">
@@ -74,22 +127,22 @@
                                 </tr>
                             </table>
                             
-                            <!-- Main Title / メインタイトル / 主标题 -->
+                            <!-- Main Title -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 20px 0; border-top: 2px solid #2C384B;">
-                                        <h1 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif; line-height: 1.3;">
+                                        <h1 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif; line-height: 1.3;" class="mobile-title">
                                             K8が完全進化！🚀<br>全リニューアルで楽しさMAX解禁！
                                         </h1>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Thank You Text / 感謝の言葉 / 感谢文字 -->
+                            <!-- Thank You Text -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 15px 0;">
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             いつもK8をご愛顧いただき、誠にありがとうございます。<br><br>
                                             このたびK8は、<strong>皆さまへの感謝と、さらなる飛躍への決意</strong>を込めて、<br>
                                             <strong>ブランドロゴを「金色」へリニューアル</strong>いたしました。
@@ -98,18 +151,18 @@
                                 </tr>
                             </table>
                             
-                            <!-- New Glory / 新たな輝き / 新的辉煌 -->
+                            <!-- New Glory -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 20px 0; border-top: 2px solid #2C384B;">
-                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;">
+                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;" class="mobile-title">
                                             ✨お客さまとともに、新たな輝きへ
                                         </h2>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center" style="padding: 15px 0;">
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             日本では古くから、金色は<strong>「幸運」「成功」「繁栄」</strong>の象徴とされてきました。<br><br>
                                             今回のロゴリニューアルには、<strong>K8に集うすべてのお客さま一人ひとりに、より多くのチャンスと喜びが訪れるように</strong>——そんな想いを込めています。<br><br>
                                             金色に輝くK8から、皆さまへ<strong>「さらなる幸運」と「特別なひととき」</strong>をお届けします。
@@ -118,25 +171,25 @@
                                 </tr>
                             </table>
                             
-                            <!-- Unchanging Commitment / 変わらない約束 / 不变的承诺 -->
+                            <!-- Unchanging Commitment -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 20px 0; border-top: 2px solid #2C384B;">
-                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;">
+                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;" class="mobile-title">
                                             🛡変わらないK8の約束 🎉
                                         </h2>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center" style="padding: 15px 0;">
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             ロゴは新しくなりますが、K8が皆さまにお約束している品質とサービスは変わりません。
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="left" style="padding: 15px 0;">
-                                        <div style="color: #FFFFFF; font-size: 16px; font-weight: bold; line-height: 1.8; font-family: Arial, sans-serif;">
+                                        <div style="color: #FFFFFF; font-size: 16px; font-weight: bold; line-height: 1.8; font-family: Arial, sans-serif;" class="mobile-font">
                                             • 🎰懐かしのパチンコ機種がプレイ可能！<br>
                                             • 💥6,000種超のゲーム×即時入出金×仮想通貨対応<br>
                                             • 🕹️初心者も安心！スマホ＆PCでサクサク快適プレイ<br>
@@ -146,32 +199,32 @@
                                 </tr>
                             </table>
                             
-                            <!-- Three Major Benefits / 3大特典 / 三大特典 -->
+                            <!-- Three Major Benefits -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 20px 0; border-top: 2px solid #2C384B;">
-                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;">
+                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;" class="mobile-title">
                                             🎉K8金ロゴ記念！今だけ3大特典解禁🔥
                                         </h2>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center" style="padding: 10px 0;">
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             皆さまへの感謝を込めた限定プレゼント盛りだくさん🎁
                                         </p>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Benefit 1 / 特典1 / 特典1 -->
+                            <!-- Benefit 1 -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 20px 0;">
                                 <tr>
-                                    <td style="background-color: #161E29; border: 2px solid #2C384B; border-radius: 15px; padding: 20px;">
+                                    <td style="background-color: #161E29; border: 2px solid #2C384B; border-radius: 15px; padding: 20px;" class="mobile-padding">
                                         <h3 style="margin: 0 0 15px 0; color: #FFDDA7; font-size: 18px; font-weight: bold; font-family: Arial, sans-serif;">
                                             ①【新規特典】
                                         </h3>
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             🎉 登録で $40 + 288回フリースピン + 最大$1,800ボーナス！<br>
                                             🎁 さらに招待コード「<span style="color:#FFDDA7;font-weight:bold;">K8GOLD</span>」で$8クーポンGET！<br>
                                             👇 下のリンクから登録するだけでOK！<br>
@@ -181,14 +234,14 @@
                                 </tr>
                             </table>
                             
-                            <!-- Benefit 2 / 特典2 / 特典2 -->
+                            <!-- Benefit 2 -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 20px 0;">
                                 <tr>
-                                    <td style="background-color: #161E29; border: 2px solid #2C384B; border-radius: 15px; padding: 20px;">
+                                    <td style="background-color: #161E29; border: 2px solid #2C384B; border-radius: 15px; padding: 20px;" class="mobile-padding">
                                         <h3 style="margin: 0 0 15px 0; color: #FFDDA7; font-size: 18px; font-weight: bold; font-family: Arial, sans-serif;">
                                             ②【既存会員特典】
                                         </h3>
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             💥エアドロップコード「<a href="https://k8.io/member/redemption-code/" target="_blank" style="color:#FFDDA7;font-weight:bold;text-decoration:underline;">K8-GOLD25</a>」で限定ボーナスGET！<br>
                                             ※有効ベット条件あり＆先着1,000名限定！
                                         </p>
@@ -196,54 +249,56 @@
                                 </tr>
                             </table>
                             
-                            <!-- Benefit 3 / 特典3 / 特典3 -->
+                            <!-- Benefit 3 -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 20px 0;">
                                 <tr>
-                                    <td style="background-color: #161E29; border: 2px solid #2C384B; border-radius: 15px; padding: 20px;">
+                                    <td style="background-color: #161E29; border: 2px solid #2C384B; border-radius: 15px; padding: 20px;" class="mobile-padding">
                                         <h3 style="margin: 0 0 15px 0; color: #FFDDA7; font-size: 18px; font-weight: bold; font-family: Arial, sans-serif;">
                                             ③【Ｘ限定抽選会】
                                         </h3>
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             🎮PS5 Proが当たる！当選者は3名限定！
                                         </p>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- CTA Button / CTAボタン / CTA按钮 -->
+                            <!-- CTA Button -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 30px 0;">
-                                        <p style="margin: 0 0 20px 0; color: #FFFFFF; font-size: 18px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0 0 20px 0; color: #FFFFFF; font-size: 18px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;" class="mobile-font">
                                             ✨今すぐ新生"K8 GOLD"を体験せよ！✨
                                         </p>
+                                        <!-- Outlook Button -->
                                         <!--[if mso]>
                                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://k8airdrop.com/" style="height:50px;v-text-anchor:middle;width:250px;" arcsize="50%" stroke="f" fillcolor="#D6B179">
                                         <w:anchorlock/>
                                         <center style="color:#432E0C;font-family:Arial,sans-serif;font-size:18px;font-weight:bold;">👉詳細についてはこちら</center>
                                         </v:roundrect>
                                         <![endif]-->
-                                        <![if !mso]>
-                                        <a href="https://k8airdrop.com/" target="_blank" style="display: inline-block; background-color: #D6B179; color: #432E0C; text-decoration: none; padding: 15px 40px; border-radius: 25px; font-size: 18px; font-weight: bold; text-align: center; font-family: Arial, sans-serif; border: none;">
+                                        <!-- Standard Button -->
+                                        <!--[if !mso]><!-->
+                                        <a href="https://k8airdrop.com/" target="_blank" style="display: inline-block; background-color: #D6B179; color: #432E0C; text-decoration: none; padding: 15px 40px; border-radius: 25px; font-size: 18px; font-weight: bold; text-align: center; font-family: Arial, sans-serif; border: none;" class="mobile-button">
                                             👉詳細についてはこちら
                                         </a>
-                                        <![endif]>
+                                        <!--<![endif]-->
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Security & Trust Commitment / 安心と信頼への取り組み / 安心与信赖 -->
+                            <!-- Security & Trust Commitment -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 20px 0; border-top: 2px solid #2C384B;">
-                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;">
+                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;" class="mobile-title">
                                             🔒安心と信頼への取り組み
                                         </h2>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center" style="padding: 15px 0;">
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             K8では、皆さまの個人情報保護と安全なプレイ環境の提供を最優先に取り組んでいます。<br>
                                             最新のセキュリティ技術を導入し、安心してご利用いただける体制を整えております。<br>
                                             また、日本語対応専用のカスタマーサポートチームが、<strong>迅速かつ丁寧にサポート</strong>いたします。<br>
@@ -253,18 +308,18 @@
                                 </tr>
                             </table>
                             
-                            <!-- Appreciation / 感謝 / 感谢 -->
+                            <!-- Appreciation -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 20px 0; border-top: 2px solid #2C384B;">
-                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;">
+                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;" class="mobile-title">
                                             💖心からの感謝を込めて
                                         </h2>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center" style="padding: 15px 0;">
-                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;">
+                                        <p style="margin: 0; color: #FFFFFF; font-size: 16px; text-align: center; line-height: 1.6; font-family: Arial, sans-serif;" class="mobile-font">
                                             これまでK8が成長できたのは、ひとえに日本のお客さまの温かいご支援とご愛顧のおかげです。<br>
                                             心より感謝申し上げます。<br><br>
                                             新たな「金色のK8」とともに、<br>
@@ -279,104 +334,106 @@
                         </td>
                     </tr>
                     
-                    <!-- Spacer / スペーサー / 间距 -->
+                    <!-- Spacer -->
                     <tr>
                         <td style="height: 10px; background-color: #263143;"></td>
                     </tr>
                     
-                    <!-- Games Section / ゲームセクション / 游戏部分 -->
+                    <!-- Games Section -->
                     <tr>
                         <td style="background-color: #1E2735; padding: 20px; border-radius: 12px;">
                             
-                            <!-- Games Title / ゲームタイトル / 游戏标题 -->
+                            <!-- Games Title -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 20px 0;">
-                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;">
+                                        <h2 style="margin: 0; color: #FFDDA7; font-size: 24px; font-weight: bold; text-align: center; font-family: Arial, sans-serif;" class="mobile-title">
                                             🌟 人気なビデオスロット 🌟
                                         </h2>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Games Grid - Row 1 / ゲームグリッド - 1行目 / 游戏网格 - 第一行 -->
+                            <!-- Games Grid - Row 1 -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/PP/vs20clustcol/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs20clustcol-en-US_IZ5b240625075417.png?auto=formatq=60" alt="Cluster Colony Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs20clustcol-en-US_IZ5b240625075417.png?auto=formatq=60" alt="Cluster Colony Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/PP/vs5hotbmult/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs5hotbmult-en-US_BGSk240521075035.png?auto=formatq=60" alt="Hot Burn Multiplier Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs5hotbmult-en-US_BGSk240521075035.png?auto=formatq=60" alt="Hot Burn Multiplier Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/PP/vs20midas2/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs20midas2-en-US_nQl3240521075035.png?auto=formatq=60" alt="Midas 2 Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs20midas2-en-US_nQl3240521075035.png?auto=formatq=60" alt="Midas 2 Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Games Grid - Row 2 / ゲームグリッド - 2行目 / 游戏网格 - 第二行 -->
+                            <!-- Games Grid - Row 2 -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/PNG/journeytoparis/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/journeytoparis-en-US_Nv75240625075417.png?auto=formatq=60" alt="Journey to Paris Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/journeytoparis-en-US_Nv75240625075417.png?auto=formatq=60" alt="Journey to Paris Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/HUB88/hsg_holyheist/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/hsg_holyheist94_V3X0240627033759.png?auto=formatq=60" alt="Holy Heist Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/hsg_holyheist94_V3X0240627033759.png?auto=formatq=60" alt="Holy Heist Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/HUB88/rlx_ancienttumble/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/rlx_ancienttumble-en-US_zp3x240627032940.png?auto=formatq=60" alt="Ancient Tumble Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/rlx_ancienttumble-en-US_zp3x240627032940.png?auto=formatq=60" alt="Ancient Tumble Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Games Grid - Row 3 / ゲームグリッド - 3行目 / 游戏网格 - 第三行 -->
+                            <!-- Games Grid - Row 3 -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/HUB88/pgs_chickyrun/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/pgs_chickyrun-en-US_pUUO240627032940.png?auto=formatq=60" alt="Chicky Run Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/pgs_chickyrun-en-US_pUUO240627032940.png?auto=formatq=60" alt="Chicky Run Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/PNG/templeoftollan/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/templeoftollan-en-US_kXTb240625075417.png?auto=formatq=60" alt="Temple of Tollan Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/templeoftollan-en-US_kXTb240625075417.png?auto=formatq=60" alt="Temple of Tollan Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
-                                    <td width="33.33%" align="center" style="padding: 10px;">
+                                    <td width="33.33%" align="center" style="padding: 10px;" class="game-cell">
                                         <a href="https://k8.io/games/slots/HUB88/hsg_shadowstrike/" target="_blank">
-                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/hsg_shadowstrike94-en-US_eFb2240624074043.png?auto=formatq=60" alt="Shadow Strike Game" width="220" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
+                                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/hsg_shadowstrike94-en-US_eFb2240624074043.png?auto=formatq=60" alt="Shadow Strike Game" width="220" class="game-image" style="width: 100%; max-width: 220px; height: auto; border-radius: 8px; display: block;">
                                         </a>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- More Button / もっと見るボタン / 更多按钮 -->
+                            <!-- More Button -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 30px 0;">
+                                        <!-- Outlook Button -->
                                         <!--[if mso]>
                                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://k8.io/games/slots/new/" style="height:40px;v-text-anchor:middle;width:150px;" arcsize="50%" stroke="f" fillcolor="#D6B179">
                                         <w:anchorlock/>
                                         <center style="color:#432E0C;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">もっと見る</center>
                                         </v:roundrect>
                                         <![endif]-->
-                                        <![if !mso]>
-                                        <a href="https://k8.io/games/slots/new/" target="_blank" style="display: inline-block; background-color: #D6B179; color: #432E0C; text-decoration: none; padding: 12px 30px; border-radius: 20px; font-size: 16px; font-weight: bold; text-align: center; font-family: Arial, sans-serif; border: none;">
+                                        <!-- Standard Button -->
+                                        <!--[if !mso]><!-->
+                                        <a href="https://k8.io/games/slots/new/" target="_blank" style="display: inline-block; background-color: #D6B179; color: #432E0C; text-decoration: none; padding: 12px 30px; border-radius: 20px; font-size: 16px; font-weight: bold; text-align: center; font-family: Arial, sans-serif; border: none;" class="mobile-button">
                                             もっと見る
                                         </a>
-                                        <![endif]>
+                                        <!--<![endif]-->
                                     </td>
                                 </tr>
                             </table>
@@ -384,11 +441,11 @@
                         </td>
                     </tr>
                     
-                    <!-- Footer / フッター / 底部 -->
+                    <!-- Footer -->
                     <tr>
                         <td style="background-color: #263143; padding: 20px; text-align: center;">
                             
-                            <!-- Links / リンク / 链接 -->
+                            <!-- Links -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 10px 0;">
@@ -400,7 +457,7 @@
                                 </tr>
                             </table>
                             
-                            <!-- Social Icons / ソーシャルアイコン / 社交图标 -->
+                            <!-- Social Icons -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border: none;">
                                 <tr>
                                     <td align="center" style="padding: 15px 0; border: none;">
@@ -423,13 +480,13 @@
                                             <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/Discord20230609_icon_aPXx230609024206.png" alt="Discord" width="25" height="25" style="display: inline-block; border: none;">
                                         </a>
                                         <a href="https://line.me/R/ti/p/@510ftlxl?from=page&liff.referrer=https%3A%2F%2Fk8.io%2F&accountId=510ftlxl" target="_blank" style="margin: 0 5px; text-decoration: none; border: none;">
-                                            <img src="https://ci3.googleusercontent.com/meips/ADKq_Nae4fFXhcmIGTzOU395QYS6F_-3aPTNT9pTp06GlAOut4SuKAMhkwjftugA6Hj5jhJUMMvFhHIv4_y37_5zghTjT3tqTTFEy1T2pbNqqb819OEjeJDWnOMo3UiQrp5O_xlt0xUrnkaMoOCNRsABxC2cNEWKQY8elHlKtpUhJwkD6OQd7ay7rAIb=s0-d-e1-ft#https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/LINE20230609_Icon_818c230609024206.png" alt="Line" width="25" height="25" style="display: inline-block; border: none;">
+                                            <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/LINE20230609_Icon_818c230609024206.png" alt="Line" width="25" height="25" style="display: inline-block; border: none;">
                                         </a>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Footer Text / フッターテキスト / 底部文字 -->
+                            <!-- Footer Text -->
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center" style="padding: 10px 0;">
