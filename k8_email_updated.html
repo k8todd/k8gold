@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    
+    <style type="text/css">
+        /* 字体导入 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, table, td, p, a, span, div {
+            font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', 'MS PGothic', sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        body {
+            background: #263143;
+            margin: 0;
+            min-height: 100vh;
+            color: #FFFFFF;
+        }
+        
+        /* 容器样式 */
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: transparent;
+        }
+        
+        .content-section {
+            background: #1E2735;
+            padding: 20px;
+            border-radius: 0 0 12px 12px;
+            margin: 10px 0 20px 0;
+        }
+        
+        .games-section {
+            background: #1E2735;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0 10px 0;
+        }
+        
+        /* 文本样式 */
+        .main-title {
+            font-size: 25px;
+            font-weight: bold;
+            color: #FFDDA7;
+            text-align: center;
+            margin: 20px 0;
+            padding-top: 20px;
+            border-top: 2px solid #2C384B;
+        }
+        
+        .main-title:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        
+        .content-text {
+            color: #FFFFFF;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .section-title {
+            color: #FFFFFF;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            padding-top: 20px;
+            border-top: 2px solid #2C384B;
+        }
+        
+        .section-title:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        
+        /* 统一的金色按钮样式 */
+        .cta-button {
+            display: inline-block;
+            background: #D6B179;
+            color: #432E0C !important;
+            text-decoration: none;
+            padding: 12px 50px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(214, 177, 121, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #C4A566;
+            color: #432E0C !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(214, 177, 121, 0.4);
+        }
+        
+        .gold-button {
+            display: inline-block;
+            background: #D6B179;
+            color: #432E0C !important;
+            text-decoration: none;
+            padding: 15px 60px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(214, 177, 121, 0.3);
+            border: 2px solid #D6B179;
+        }
+        
+        .gold-button:hover {
+            background: #C4A566;
+            border-color: #C4A566;
+            color: #432E0C !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(214, 177, 121, 0.4);
+        }
+        
+        /* 活动容器样式 */
+        .promotion-container {
+            background: #161E29;
+            border: 2px solid #2C384B;
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .promotion-container:hover {
+            border-color: #D6B179;
+            box-shadow: 0 4px 15px rgba(214, 177, 121, 0.2);
+        }
+        
+        .promotion-title {
+            color: #D6B179;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #2C384B;
+        }
+        
+        .promotion-title:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        
+        .promotion-content {
+            color: #FFFFFF;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+        }
+        
+        /* 游戏网格 */
+        .games-grid {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        
+        .games-row {
+            display: table-row;
+        }
+        
+        .game-item {
+            display: table-cell;
+            width: 33.33%;
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+        
+        .game-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .game-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* 底部样式 */
+        .footer-section {
+            background: #263143;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin: 10px 0;
+        }
+        
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #FFDDA7;
+        }
+        
+        .social-icons {
+            margin: 15px 0;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-icons img {
+            height: 25px;
+            width: auto;
+        }
+        
+        .footer-text {
+            color: #ffffff;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        
+        /* 响应式设计 */
+        @media screen and (max-width: 480px) {
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            .content-section,
+            .games-section,
+            .footer-section {
+                padding: 15px !important;
+                margin: 8px 0 !important;
+            }
+            
+            .promotion-container {
+                padding: 20px 15px !important;
+                margin: 15px 0 !important;
+            }
+            
+            .main-title {
+                font-size: 20px !important;
+            }
+            
+            .content-text {
+                font-size: 14px !important;
+            }
+            
+            .promotion-title {
+                font-size: 16px !important;
+            }
+            
+            .promotion-content {
+                font-size: 14px !important;
+            }
+            
+            .games-grid {
+                display: block;
+            }
+            
+            .games-row {
+                display: block;
+            }
+            
+            .game-item {
+                display: block;
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+            
+            .footer-links a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            .social-icons a {
+                margin: 0 3px;
+            }
+            
+            .gold-button {
+                padding: 12px 40px !important;
+                font-size: 14px !important;
+            }
+            
+            .cta-button {
+                padding: 10px 35px !important;
+                font-size: 14px !important;
+            }
+            
+            .separator-space {
+                height: 25px !important;
+            }
+        }
+        
+        /* Outlook兼容性 */
+        <!--[if mso]>
+        <style type="text/css">
+            .email-container { width: 600px !important; }
+            .games-grid { width: 100% !important; }
+            .game-item { width: 186px !important; }
+            .promotion-container { background-color: #161E29 !important; }
+            .content-section, .games-section { background-color: #1E2735 !important; }
+        </style>
+        <![endif]-->
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- 顶部Logo -->
+        <div style="text-align: center; padding: 20px; background: #263143;">
+            <img src="https://i.imgur.com/2Zht8e6.png" 
+                 alt="K8 Logo" 
+                 style="max-width: 250px; height: auto; background: transparent;">
+        </div>
+        
+        <!-- 主要内容区块开始 -->
+        <!-- banner单独放置，无padding -->
+        <img src="https://i.imgur.com/Vx9eDvO.jpeg"
+             alt="K8 Banner"
+             style="width:100%;height:auto;display:block;border-top-left-radius:12px;border-top-right-radius:12px;border-bottom-left-radius:0;border-bottom-right-radius:0;margin:0;">
+
+        <!-- 主要内容有padding -->
+        <div class="content-section" style="border-radius:0 0 12px 12px;margin-top:0;">
+            <p class="content-text">
+                <strong style="font-size: 18px;">[%ALIAS%]様！</strong>
+            </p>
+            
+            <p class="content-text">皆さまの声にお応えし、K8はさらなる進化を遂げました。</p>
+            
+            <div class="main-title" style="border-top: none; padding-top: 0;">K8が完全進化！🚀 全リニューアルで楽しさMAX解禁！</div>
+            
+            <p class="content-text">
+                いつもK8をご愛顧いただき、誠にありがとうございます。<br><br>
+                このたびK8は、<strong>皆さまへの感謝と、さらなる飛躍への決意</strong>を込めて、<br>
+                <strong>ブランドロゴを「金色」へリニューアル</strong>いたしました。
+            </p>
+            
+            <div class="main-title">✨お客さまとともに、新たな輝きへ</div>
+            
+            <p class="content-text">
+                日本では古くから、金色は<strong>「幸運」「成功」「繁栄」</strong>の象徴とされてきました。<br><br>
+                今回のロゴリニューアルには、<strong>K8に集うすべてのお客さま一人ひとりに、より多くのチャンスと喜びが訪れるように</strong>——そんな想いを込めています。<br><br>
+                金色に輝くK8から、皆さまへ<strong>「さらなる幸運」と「特別なひととき」</strong>をお届けします。
+            </p>
+            
+            <div class="main-title">🛡変わらないK8の約束 🎉</div>
+            
+            <p class="content-text">
+                ロゴは新しくなりますが、K8が皆さまにお約束している品質とサービスは変わりません。
+            </p>
+            
+            <div style="text-align: left; max-width: 400px; margin: 20px auto;">
+                • 🎰懐かしのパチンコ機種がプレイ可能！<br>
+                • 💥6,000種超のゲーム×即時入出金×仮想通貨対応<br>
+                • 🕹️初心者も安心！スマホ＆PCでサクサク快適プレイ<br>
+                • 🗾日本語サポート365日24時間対応！
+            </div>
+            
+            <div class="main-title">🎉K8金ロゴ記念！今だけ3大特典解禁🔥</div>
+            
+            <p class="content-text">
+                皆さまへの感謝を込めた限定プレゼント盛りだくさん🎁
+            </p>
+            
+            <!-- 活动1：新规特典 -->
+            <div class="promotion-container">
+                <div class="promotion-title" style="border-top: none; padding-top: 0;">①【新規特典】</div>
+                <div class="promotion-content">
+                    🎉登録で $40 + 288回フリースピン + 最大$1,800ボーナス！<br>
+                    🎁さらに招待コード「K8GOLD」で$8クーポンGET！<br>
+                    👉 https://k8.io?invite=K8Gold
+                </div>
+            </div>
+            
+            <!-- 活动2：既存会员特典 -->
+            <div class="promotion-container">
+                <div class="promotion-title">②【既存会員特典】</div>
+                <div class="promotion-content">
+                    💥エアドロップコード「K8-GOLD25」で限定ボーナスGET！
+                </div>
+            </div>
+            
+            <!-- 活动3：X限定抽选会 -->
+            <div class="promotion-container">
+                <div class="promotion-title">③【Ｘ限定抽選会】</div>
+                <div class="promotion-content">
+                    🎮PS5 Proが当たる！当選者は3名限定！
+                </div>
+            </div>
+            
+            <div class="content-text">✨今すぐ新生"K8 GOLD"を体験せよ！✨</div>
+            
+            <div style="text-align: center;">
+                <a href="https://k8.io/" class="gold-button" target="_blank">👉詳細についてはこちら</a>
+            </div>
+            
+            <div class="main-title">🔒安心と信頼への取り組み</div>
+            
+            <p class="content-text">
+                K8では、皆さまの個人情報保護と安全なプレイ環境の提供を最優先に取り組んでいます。<br>
+                最新のセキュリティ技術を導入し、安心してご利用いただける体制を整えております。<br>
+                また、日本語対応専用のカスタマーサポートチームが、<strong>迅速かつ丁寧にサポート</strong>いたします。<br>
+                ご不明な点やご質問がありましたら、いつでもお気軽にお問い合わせください。
+            </p>
+            
+            <div class="main-title">💖心からの感謝を込めて</div>
+            
+            <p class="content-text">
+                これまでK8が成長できたのは、ひとえに日本のお客さまの温かいご支援とご愛顧のおかげです。<br>
+                心より感謝申し上げます。<br><br>
+                新たな「金色のK8」とともに、<br>
+                <strong>これからも皆さまに、最高のオンラインエンターテインメント体験と、たくさんの幸運をお届けできるよう努めてまいります。</strong><br><br>
+                今後とも変わらぬご愛顧を賜りますよう、よろしくお願い申し上げます。<br><br>
+                <strong style="color: #ffffff;">K8 日本公式チーム一同</strong>
+            </p>
+        </div>
+        
+        <!-- 分隔间距 -->
+        <div class="separator-space" style="height: 0px; background: #263143;"></div>
+        
+        <!-- 游戏部分 -->
+        <div class="games-section">
+            <div class="main-title">🌟 人気なビデオスロット 🌟</div>
+            
+            <div class="games-grid">
+                <div class="games-row">
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/PP/vs20clustcol/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs20clustcol-en-US_IZ5b240625075417.png?auto=formatq=60" 
+                                 alt="Cluster Colony Game" class="game-image">
+                        </a>
+                    </div>
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/PP/vs5hotbmult/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs5hotbmult-en-US_BGSk240521075035.png?auto=formatq=60" 
+                                 alt="Hot Burn Multiplier Game" class="game-image">
+                        </a>
+                    </div>
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/PP/vs20midas2/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/vs20midas2-en-US_nQl3240521075035.png?auto=formatq=60" 
+                                 alt="Midas 2 Game" class="game-image">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="games-row">
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/PNG/journeytoparis/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/journeytoparis-en-US_Nv75240625075417.png?auto=formatq=60" 
+                                 alt="Journey to Paris Game" class="game-image">
+                        </a>
+                    </div>
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/HUB88/hsg_holyheist/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/hsg_holyheist94_V3X0240627033759.png?auto=formatq=60" 
+                                 alt="Holy Heist Game" class="game-image">
+                        </a>
+                    </div>
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/HUB88/rlx_ancienttumble/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/rlx_ancienttumble-en-US_zp3x240627032940.png?auto=formatq=60" 
+                                 alt="Ancient Tumble Game" class="game-image">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="games-row">
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/HUB88/pgs_chickyrun/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/pgs_chickyrun-en-US_pUUO240627032940.png?auto=formatq=60" 
+                                 alt="Chicky Run Game" class="game-image">
+                        </a>
+                    </div>
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/PNG/templeoftollan/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/templeoftollan-en-US_kXTb240625075417.png?auto=formatq=60" 
+                                 alt="Temple of Tollan Game" class="game-image">
+                        </a>
+                    </div>
+                    <div class="game-item">
+                        <a href="https://k8.io/games/slots/HUB88/hsg_shadowstrike/" target="_blank">
+                            <img src="https://casinogamesk8.imgix.net/live/image/imgix/game/hsg_shadowstrike94-en-US_eFb2240624074043.png?auto=formatq=60" 
+                                 alt="Shadow Strike Game" class="game-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="https://k8.io/games/slots/new/" class="cta-button" target="_blank">もっと見る</a>
+            </div>
+        </div>
+        
+        <!-- 底部 -->
+        <div class="footer-section">
+            <div class="footer-links">
+                <a href="https://k8.io/?modal=live-support" target="_blank">カスタマーサポート</a>
+                <a href="https://help.k8.io/en/" target="_blank">ヘルプセンター</a>
+                <a href="https://k8airdrop.com/tgcn" target="_blank">公式TG</a>
+                <a href="https://k8.io/about-us" target="_blank">会社案内</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://k8airdrop.com/yten" target="_blank" title="YouTube">
+                    <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/Youtube20230609_icon_OAfa230609024206.png" alt="YouTube">
+                </a>
+                <a href="https://k8airdrop.com/instaen" target="_blank" title="Instagram">
+                    <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/Instagram20230609_icon_0HRJ230609024206.png" alt="Instagram">
+                </a>
+                <a href="https://k8airdrop.com/fben" target="_blank" title="Facebook">
+                    <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/Facebook20230609_icon_5ldE230609024206.png" alt="Facebook">
+                </a>
+                <a href="https://k8airdrop.com/twxen" target="_blank" title="Twitter">
+                    <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/Twitter_icon_tinified20230725_nmBu230725080937.png" alt="Twitter">
+                </a>
+                <a href="https://k8airdrop.com/twitchen" target="_blank" title="Twitch">
+                    <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/Twitch20230609_icon_SU5I230609024206.png" alt="Twitch">
+                </a>
+                <a href="https://k8airdrop.com/discord" target="_blank" title="Discord">
+                    <img src="https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/Discord20230609_icon_aPXx230609024206.png" alt="Discord">
+                </a>
+                <a href="https://k8airdrop.com/linejp" target="_blank" title="Line">
+                    <img src="https://ci3.googleusercontent.com/meips/ADKq_Nae4fFXhcmIGTzOU395QYS6F_-3aPTNT9pTp06GlAOut4SuKAMhkwjftugA6Hj5jhJUMMvFhHIv4_y37_5zghTjT3tqTTFEy1T2pbNqqb819OEjeJDWnOMo3UiQrp5O_xlt0xUrnkaMoOCNRsABxC2cNEWKQY8elHlKtpUhJwkD6OQd7ay7rAIb=s0-d-e1-ft#https://storage.googleapis.com/e9527c-live/live/image/imgix/email%20template/LINE20230609_Icon_818c230609024206.png" alt="Line">
+                </a>
+            </div>
+            
+            <p class="footer-text">
+                K8からのマーケティングメールの受信したくない、またはメールアドレスを変更した場合は、
+                <a href="[%UNSUB%]" style="color:#ffffff; text-decoration: underline;">配信停止</a>をクリックしてください。
+            </p>
+            
+            <p class="footer-text">
+                ©<a href="http://k8.io" style="color:#ffffff; text-decoration:none;">K8</a> 2025 | 全著作権所有
+            </p>
+        </div>
+    </div>
+</body>
+</html>
